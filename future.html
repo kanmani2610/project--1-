@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Letters to the Future</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    h1, h2 {
+      color: #b30059;
+    }
+    .form-container {
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+    }
+    iframe {
+      border-radius: 10px;
+    }
+    .letter-box {
+      background-color: #fff;
+      border-left: 6px solid #ff69b4;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .letter-box.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: #4B0082;">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="portal.html">
+      <img src="https://th.bing.com/th/id/OIP.-WneChs5ucOouUHOjqcBHQHaBk?r=0&rs=1&pid=ImgDetMain" alt="Logo" style="height: 30px; margin-right: 10px;">
+      Portal
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="portal.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="achievements.html">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="memories.html">Memories</a></li>
+        <li class="nav-item"><a class="nav-link active" href="future.html">Letters</a></li>
+        <li class="nav-item"><a class="nav-link" href="5-6 HT-1.html">Student Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="downloads.html">About</a></li>
+      </ul>
+      <span id="clock" class="ms-3 text-white fw-semibold"></span>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+  <div class="form-container">
+    <h1 class="text-center mb-4" id="typewriterTitle"></h1>
+    <p class="text-center fst-italic" id="quoteBox" style="color:#b30059; font-weight: 500;"></p>
+    <p class="text-center mb-4">Want to leave a message for the future you, your juniors, or the world? Fill the form below and share your thoughts.</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeUxlMPi0wvCB0AK5IHzBC6DIzUu1DllnzWDcIIHzmhQC6w1Q/viewform?embedded=true" 
+            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-center mb-4">🌟 Shared Letters</h2>
+  <div class="letter-box">
+    <h5>Kanmani J</h5>
+    <p>hello,I'm kanmani.i have really enjoyed my days of 1st year with all my friends,mentors.I guess we shall enter into second year with good health.</p>
+  </div>
+  <div class="letter-box">
+    <h5>J Divya</h5>
+    <p>be gratefull for the things you own</p>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString();
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Typewriter effect
+  const title = "Write a Letter to the Future 📬";
+  let i = 0;
+  function typeEffect() {
+    if (i < title.length) {
+      document.getElementById("typewriterTitle").innerHTML += title.charAt(i);
+      i++;
+      setTimeout(typeEffect, 80);
+    }
+  }
+  typeEffect();
+
+  // Quotes rotation
+  const quotes = [
+    "“One day, this will be a memory you'll smile at.”",
+    "“You’re writing history with every word.”",
+    "“Your future self is already proud of you.”",
+    "“Words written today become treasures tomorrow.”"
+  ];
+  let idx = 0;
+  setInterval(() => {
+    document.getElementById("quoteBox").textContent = quotes[idx];
+    idx = (idx + 1) % quotes.length;
+  }, 4000);
+
+  // Fade in letter boxes
+  function revealLetters() {
+    const boxes = document.querySelectorAll('.letter-box');
+    boxes.forEach(box => {
+      const top = box.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        box.classList.add('show');
+      }
+    });
+  }
+  window.addEventListener('scroll', revealLetters);
+  window.addEventListener('load', revealLetters);
+
+  // Toast message when iframe is visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const toast = document.createElement('div');
+        toast.innerText = "✨ Thank you for writing to the future!";
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.right = '20px';
+        toast.style.background = '#4B0082';
+        toast.style.color = 'white';
+        toast.style.padding = '12px 20px';
+        toast.style.borderRadius = '10px';
+        toast.style.boxShadow = '0 4px 10px rgba(0,0,0,0.2)';
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 5000);
+        observer.disconnect();
+      }
+    });
+  });
+  observer.observe(document.querySelector('iframe'));
+</script>
+</body>
+</html>

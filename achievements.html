@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Achievements - SDNB College</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #F3E9FF, #EAD7FF);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding-top: 90px;
+    }
+
+    .achievement-header {
+      background: #4B0082;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card {
+      border: none;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .card.reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(75, 0, 130, 0.25);
+    }
+
+    .card-img-top {
+      height: 320px;
+      object-fit: cover;
+      border-radius: 15px 15px 0 0;
+      transition: transform 0.3s ease;
+    }
+
+    .card-img-top:hover {
+      transform: scale(1.03);
+    }
+
+    #clock {
+      color: white;
+    }
+
+    #backToTop {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow" style="background-color: #4B0082;">
+  <div class="container">
+    <a class="navbar-brand fw-bold d-flex align-items-center" href="portal.html">
+      <img src="https://th.bing.com/th/id/OIP.-WneChs5ucOouUHOjqcBHQHaBk?r=0&rs=1&pid=ImgDetMain" alt="Faceprep Logo" style="height: 30px; margin-right: 10px;">
+     Portal
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="portal.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="achievements.html">Achievements</a></li>
+        <li class="nav-item"><a class="nav-link" href="memories.html">Memories</a></li>
+        <li class="nav-item"><a class="nav-link" href="future.html">Letters</a></li>
+        <li class="nav-item"><a class="nav-link" href="5-6 HT-1.html">Student Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="downloads.html">About</a></li>
+      </ul>
+      <span id="clock" class="ms-3 text-white fw-semibold"></span>
+    </div>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="achievement-header">
+  <h1>Our Proud Achievements</h1>
+  <p class="lead">Celebrating excellence and success at SDNB College</p>
+  <p id="totalAchievements" class="text-light-emphasis mt-3"></p>
+</header>
+
+<!-- Search and Filter -->
+<div class="container mb-4">
+  <input type="text" id="searchInput" class="form-control mb-3" placeholder="🔍 Search achievements...">
+  <div class="d-flex flex-wrap gap-3 align-items-center">
+    <label for="yearFilter" class="form-label fw-semibold mb-0">Filter by Year:</label>
+    <select id="yearFilter" class="form-select w-auto">
+      <option value="all">All</option>
+      <option value="2024">2024</option>
+    </select>
+
+    <label for="sortBy" class="form-label fw-semibold mb-0">Sort:</label>
+    <select id="sortBy" class="form-select w-auto">
+      <option value="default">Default</option>
+      <option value="title">Achievement Title A-Z</option>
+    </select>
+  </div>
+</div>
+
+<!-- Cards -->
+<div class="container">
+  <div class="row justify-content-center g-4">
+
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <img src="img9.jpg" class="card-img-top" alt="Best in sports" />
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Table Tennis Tournament</h5>
+          <p class="card-text">Applause for Varsha P [BSc CS(AI)] for serving up excellence and clinching the Runner-Up title at the State-Level Inter-Collegiate Table Tennis Tournament! 👏🔥</p>
+          <p class="text-muted mb-0"><small class="year">2024</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <img src="img8.jpg" class="card-img-top" alt="Placement Success" />
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Code A Thon</h5>
+          <p class="card-text">💡 Our students excelled in a series of exciting events, including Code-O-Thon, Hack Verse, Word Edifice, Pictionary, and Neural Nexus. 🏆🎯</p>
+          <p class="text-muted mb-0"><small class="year">2024</small></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card shadow h-100">
+        <img src="img10.jpg" class="card-img-top" alt="National Events" />
+        <div class="card-body">
+          <h5 class="card-title fw-bold">Code Clash</h5>
+          <p class="card-text">✨ Proud Moment!<br>
+          🥇 1st Place: Harini Raja & Kamalika A<br>
+          🥉 3rd Place: Rickshitha A & Fathima Hafeesha P</p>
+          <p class="text-muted mb-0"><small class="year">2024</small></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Toast -->
+<div id="welcomeToast" class="toast position-fixed top-0 end-0 m-3 text-bg-primary" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <strong class="me-auto">Welcome!</strong>
+    <small>Now</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+  </div>
+  <div class="toast-body">
+    You're viewing our proud achievements 💜🎓
+  </div>
+</div>
+
+<!-- Back to Top -->
+<button id="backToTop" class="btn btn-dark position-fixed" style="bottom: 20px; right: 20px;">↑ Top</button>
+
+<!-- JS Scripts -->
+<script>
+  // Clock
+  function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").textContent = now.toLocaleTimeString();
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // Toast
+  window.onload = () => {
+    new bootstrap.Toast(document.getElementById('welcomeToast')).show();
+  };
+
+  // Back to Top
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    backToTop.style.display = window.scrollY > 300 ? "block" : "none";
+  });
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  // Reveal on scroll
+  function revealCards() {
+    const cards = document.querySelectorAll(".card");
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (cardTop < windowHeight - 100) {
+        card.classList.add("reveal");
+      }
+    });
+  }
+  window.addEventListener("scroll", revealCards);
+  window.addEventListener("load", revealCards);
+
+  // Achievement Counter
+  document.getElementById("totalAchievements").textContent =
+    "Total Achievements: " + document.querySelectorAll(".card").length;
+
+  // Search
+  document.getElementById("searchInput").addEventListener("input", function () {
+    const filter = this.value.toLowerCase();
+    document.querySelectorAll(".card").forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.parentElement.style.display = text.includes(filter) ? "block" : "none";
+    });
+  });
+
+  // Year Filter
+  document.getElementById("yearFilter").addEventListener("change", function () {
+    const selected = this.value;
+    document.querySelectorAll(".card").forEach(card => {
+      const year = card.querySelector(".year").textContent;
+      card.parentElement.style.display = (selected === "all" || year === selected) ? "block" : "none";
+    });
+  });
+
+  // Sort by title
+  document.getElementById("sortBy").addEventListener("change", () => {
+    const cards = Array.from(document.querySelectorAll(".card"));
+    const container = document.querySelector(".row");
+    cards.sort((a, b) => {
+      const titleA = a.querySelector(".card-title").textContent;
+      const titleB = b.querySelector(".card-title").textContent;
+      return titleA.localeCompare(titleB);
+    });
+    cards.forEach(card => container.appendChild(card.parentElement));
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
